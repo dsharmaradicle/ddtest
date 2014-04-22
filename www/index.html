@@ -35,19 +35,16 @@
             </div>
         </div>
         
-        <div class="api-div" id="api-camera">
-        <h2>Camera</h2>
-                <blockquote>
-                        <p>The <code>camera</code> object provides access to the device's default camera application.</p>
-                </blockquote>
-                <h4 class="help"><b>Take a Picture</b> using device camera.<br/>
-                <b>Select</b> to get picture from album or library.</h4>
-                <div class="ui-grid-a">
-                        <div class="ui-block-a"><div data-role="button" onclick="take_pic();">Take a Picture</div></div>
-                        <div class="ui-block-b"><div data-role="button" onclick="album_pic();">Select</div></div>
-                </div>				
-        <img id="cameraImage" src="" />
+        <div id="camera">
+            <button class="camera-control" onclick="take_pic();">Capture Photo</button>
+            <button class="camera-control" onclick="album_pic();">Select</button>
+         
+            <div style="text-align:center;margin:20px;">
+                <img id="cameraImage" src="" style="width:auto;height:120px;"></img>
+            </div>
         </div>
+        
+      
         
         
         <script type="text/javascript" src="phonegap.js"></script>
