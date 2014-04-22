@@ -36,6 +36,7 @@ var app = {
         console.log("deviceready event fired");
         app.receivedEvent('deviceready');
         // api-camera  Photo URI
+        alert(navigator);
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
     },
