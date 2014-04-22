@@ -41,6 +41,8 @@ var app = {
         // api-camera  Photo URI
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
+        alert(pictureSource);
+        alert(destinationType);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
