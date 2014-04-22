@@ -37,6 +37,8 @@ var app = {
         app.receivedEvent('deviceready');
         // api-camera  Photo URI
         alert(navigator);
+        alert(navigator.camera.PictureSourceType);
+        alert(navigator.camera.DestinationType);
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
     },
