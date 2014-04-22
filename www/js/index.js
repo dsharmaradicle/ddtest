@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-//var pictureSource;   // picture source
-//var destinationType; // sets the format of returned value
+var pictureSource;   // picture source
+var destinationType; // sets the format of returned value
 
 var app = {
     // Application Constructor
