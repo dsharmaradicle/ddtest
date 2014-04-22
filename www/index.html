@@ -24,7 +24,7 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>DDTest</title>
     </head>
     <body>
         <div class="app">
@@ -34,8 +34,25 @@
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+        
+        <div class="api-div" id="api-camera">
+        <h2>Camera</h2>
+                <blockquote>
+                        <p>The <code>camera</code> object provides access to the device's default camera application.</p>
+                </blockquote>
+                <h4 class="help"><b>Take a Picture</b> using device camera.<br/>
+                <b>Select</b> to get picture from album or library.</h4>
+                <div class="ui-grid-a">
+                        <div class="ui-block-a"><div data-role="button" onclick="take_pic();">Take a Picture</div></div>
+                        <div class="ui-block-b"><div data-role="button" onclick="album_pic();">Select</div></div>
+                </div>				
+        <img id="cameraImage" src="" />
+        </div>
+        
+        
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>

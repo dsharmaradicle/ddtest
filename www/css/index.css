@@ -113,3 +113,60 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+
+
+.api-div {
+ 	color: #202020;
+ 	font-size: 0.9em;
+ 	font-style: normal;
+ 	text-decoration: none;
+	margin-bottom: 2.0em;
+}
+code { 
+	font-weight: bold; 
+	font-size: 1.1em;
+	color: #114a80;
+}
+blockquote {
+	color: #767573;
+	font-style: normal;
+	margin-left: 25px; 
+	padding-left: 10px;
+	position: relative;
+	text-shadow: #FFFFFF 0px 1px 0px;
+}
+blockquote code {
+	color: #ce7929;
+}
+blockquote p {
+	padding: 0;
+	font-size: 0.8em;
+}
+blockquote::before {
+	font-style: normal;
+	content: '\201C';
+	font-size: 400%; 
+	font-family: Georgia, Palatino, 'Times New Roman', Times;;
+	position: absolute;
+	left: -20px;
+	top: -0.3em;
+	color: #cecece;
+}
+
+.api-div h4 {
+ 	display: block; 
+ 	font-size: 0.8em !important; 
+ 	font-weight: normal; 
+ 	background: #eef; 
+ 	border-left: 6px solid #f62c0b;
+ 	padding: 5px 8px;
+ 	margin: .5em 0px;
+}
+.api-div .help {
+ 	border-left: 6px solid #188f69;
+}
+
+.ui-grid-a, .ui-grid-b {
+	margin: 0.4em 0px;
+}
