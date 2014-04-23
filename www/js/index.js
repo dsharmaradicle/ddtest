@@ -56,11 +56,10 @@ var app = {
         console.log('Received Event: ' + id);
         
         var cameraParentElement = document.getElementById('camera');
-        var cameraElement = cameraParentElement.querySelector('.camera-option');
         
         //window.setTimeout(function() {
             if (deviceReady) {
-                cameraElement.setAttribute('style', 'display:block;');
+                cameraParentElement.style.display='block';
             }
         //},1000);
     }
