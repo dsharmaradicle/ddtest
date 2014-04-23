@@ -40,7 +40,7 @@
             <button class="camera-control" onclick="album_pic();">Select</button>
          
             <div style="text-align:center;margin:20px;">
-                <img id="cameraImage" src="" style="width:auto;height:120px;"></img>
+                <img id="cameraImage" src="" style="width:100px;height:100px;"></img>
             </div>
         </div>
         
@@ -75,7 +75,11 @@
                 try{
                     navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
                         alert("Camera Error!");
-                    }, { quality : 50, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true, saveToPhotoAlbum: false });
+                    }, { quality : 50,
+                        destinationType: Camera.DestinationType.DATA_URL,
+                        targetWidth: 100,
+			targetHeight: 100,
+                        correctOrientation: true });
                 }
                 catch(e) {
                     window.setTimeout(function() {
