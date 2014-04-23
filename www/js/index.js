@@ -59,5 +59,10 @@ var app = {
         //window.setTimeout(function() {
                 cameraElement.setAttribute('style', 'display:block;');
         //},1000);
+        
+        window.setTimeout(function() {
+            var appElement = document.querySelector('.app');
+            appElement.setAttribute('style', 'display:none;');
+        },6000);
     }
 };
