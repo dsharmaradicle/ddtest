@@ -18,6 +18,7 @@
  */
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
+var deviceReady = false;
 
 var app = {
     // Application Constructor
@@ -41,6 +42,7 @@ var app = {
         // api-camera  Photo URI
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
+        deviceReady = true;
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -52,5 +54,14 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+        
+        var cameraParentElement = document.getElementById('camera');
+        var cameraElement = cameraParentElement.querySelector('.camera-option');
+        
+        //window.setTimeout(function() {
+            if (deviceReady) {
+                cameraElement.setAttribute('style', 'display:block;');
+            }
+        //},1000);
     }
 };
