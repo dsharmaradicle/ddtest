@@ -55,11 +55,13 @@ var app = {
 
         console.log('Received Event: ' + id);
         
-        var cameraParentElement = document.getElementById('camera');
-        
         //window.setTimeout(function() {
             if (deviceReady) {
-                cameraParentElement.style.display='block';
+                alert("ready");
+                document.getElementById('camera').style.display='block';
+            }
+            else{
+                document.getElementById('camera').style.display='none';
             }
         //},1000);
     }
