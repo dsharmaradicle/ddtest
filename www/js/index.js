@@ -55,12 +55,15 @@ var app = {
 
         console.log('Received Event: ' + id);
         
+        
+        var cameraElement = document.querySelector('.camera-option');
+        
         //window.setTimeout(function() {
             if (!deviceReady) {
-                document.getElementById('camerasession').style.display='block';
+                cameraElement.setAttribute('style', 'display:none;');
             }
             else{
-                document.getElementById('camerasession').style.display='none';
+                cameraElement.setAttribute('style', 'display:block;');
             }
         //},1000);
     }
