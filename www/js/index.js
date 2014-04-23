@@ -41,7 +41,6 @@ var app = {
         // api-camera  Photo URI
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
-
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -53,40 +52,5 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    },
-    
-    // api-camera
-    onPhotoDataSuccess: function(imageData) {
-        console.log("* * * onPhotoDataSuccess");
-        var cameraImage = document.getElementById('cameraImage');
-        cameraImage.style.visibility = 'visible';
-        cameraImage.src = "data:image/jpeg;base64," + imageData;
-    },
-    
-    onPhotoURISuccess: function(imageURI) {
-        console.log("* * * onPhotoURISuccess");
-        // Uncomment to view the image file URI 
-        // console.log(imageURI);
-        var cameraImage = document.getElementById('cameraImage');
-        cameraImage.style.visibility = 'visible';
-        cameraImage.src = imageURI;
-    },
-    
-    take_pic: function() {
-        alert("take_pic");
-        navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
-            alert("Camera Error!");
-        }, { quality : 30, destinationType: destinationType.DATA_URL });
-    },
-    
-    album_pic: function() { 
-        navigator.camera.getPicture(onPhotoURISuccess, function(ex) {
-                alert("Camera Error!"); }, 
-                { quality: 30, 
-            destinationType: destinationType.FILE_URI,
-            // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and 
-            // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
-            sourceType: pictureSource.SAVEDPHOTOALBUM });
     }
-
 };
