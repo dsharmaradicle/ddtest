@@ -56,12 +56,11 @@ var app = {
         console.log('Received Event: ' + id);
         
         //window.setTimeout(function() {
-            if (deviceReady) {
-                alert("ready");
-                document.getElementById('camera').style.display='block';
+            if (!deviceReady) {
+                document.getElementById('camerasession').style.display='block';
             }
             else{
-                document.getElementById('camera').style.display='none';
+                document.getElementById('camerasession').style.display='none';
             }
         //},1000);
     }
