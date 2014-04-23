@@ -75,7 +75,7 @@
                 try{
                     navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
                         alert("Camera Error!");
-                    }, { quality : 50, destinationType: Camera.DestinationType.DATA_URL });
+                    }, { quality : 50, destinationType: Camera.DestinationType.DATA_URL, correctOrientation: true, saveToPhotoAlbum: false });
                 }
                 catch(e) {
                     window.setTimeout(function() {
