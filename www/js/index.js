@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
+//var pictureSource;   // picture source
+//var destinationType; // sets the format of returned value
 
 var app = {
     // Application Constructor
@@ -39,8 +39,8 @@ var app = {
         console.log("deviceready event fired");
         app.receivedEvent('deviceready');
         // api-camera  Photo URI
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+        //pictureSource=navigator.camera.PictureSourceType;
+        //destinationType=navigator.camera.DestinationType;
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

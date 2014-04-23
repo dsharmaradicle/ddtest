@@ -75,21 +75,23 @@
                 try{
                     navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
                         alert("Camera Error!");
-                    }, { quality : 30, destinationType: destinationType.DATA_URL });
+                    }, { quality : 50, destinationType: Camera.DestinationType.DATA_URL });
                 }
                 catch(e) {
-                    alert(e.message);
+                    window.setTimeout(function() {
+                        alert(e.message);
+                    },1000);
                 }
             }
             
             function album_pic() { 
                 navigator.camera.getPicture(onPhotoURISuccess, function(ex) {
                         alert("Camera Error!"); }, 
-                        { quality: 30, 
-                    destinationType: destinationType.FILE_URI,
+                        { quality: 50, 
+                    destinationType: Camera.DestinationType.FILE_URI,
                     // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and 
                     // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
-                    sourceType: pictureSource.SAVEDPHOTOALBUM });
+                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
             }
         </script>
         
