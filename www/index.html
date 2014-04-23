@@ -75,7 +75,7 @@
                 try{
                     navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
                         alert("Camera Error!");
-                    }, { quality : 30, destinationType: destinationType.DATA_URL,correctOrientation: true });
+                    }, { quality : 30, destinationType: destinationType.DATA_URL });
                 }
                 catch(e) {
                     alert(e.message);
@@ -87,7 +87,6 @@
                         alert("Camera Error!"); }, 
                         { quality: 30, 
                     destinationType: destinationType.FILE_URI,
-                    correctOrientation: true,
                     // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and 
                     // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
                     sourceType: pictureSource.SAVEDPHOTOALBUM });
