@@ -48,6 +48,7 @@
         
         
         <script type="text/javascript" src="phonegap.js"></script>
+        <script src="http://debug.build.phonegap.com/target/target-script-min.js#8568b704-cab0-11e3-9e9b-22000aa44e44"></script>
         <!--<script type="text/javascript" src="js/camera.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -112,7 +113,19 @@
             }
             
             function onFail(message) {
-                alert('Failed because: ' + message);
+                //alert('Failed because: ' + message);
+                setTimeout(function() {
+                        navigator.notification.alert(
+                            message, // message
+                            okayError, // callback
+                            'Error',   // title
+                            'OK'      // buttonName
+                        );
+                    },1000);
+            }
+            
+            function okayError(){
+                // DO Something
             }
         </script>
         
