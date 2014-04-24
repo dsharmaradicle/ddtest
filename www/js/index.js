@@ -42,7 +42,7 @@ var app = {
         //pictureSource=navigator.camera.PictureSourceType;
         //destinationType=navigator.camera.DestinationType;
         //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-        window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
+        //window.resolveLocalFileSystemURI("file:///storage/emulated/0/Android/data/com.radicle.ddtest/cache/1398348679247.jpg", onResolveSuccess, fail);
         
     },
     // Update DOM on a Received Event
@@ -76,15 +76,15 @@ var app = {
 //}
 
 
-function onResolveSuccess(fileEntry) {
-    console.log(fileEntry.name);
-    alert(fileEntry.name);
-}
-
-
-
-function fail(error) {
-    alert(error.code);
-    console.log(error.code);
-}
+//function onResolveSuccess(fileEntry) {
+//    console.log(fileEntry.name);
+//    alert(fileEntry.name);
+//}
+//
+//
+//
+//function fail(error) {
+//    alert(error.code);
+//    console.log(error.code);
+//}
 
