@@ -75,3 +75,8 @@ function onFileSystemSuccess(fileSystem) {
     console.log(fileSystem.name);
 }
 
+function fail(error) {
+    alert(error.code);
+    console.log(error.code);
+}
+
