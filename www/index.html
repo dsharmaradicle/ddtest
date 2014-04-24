@@ -65,7 +65,10 @@
             function onPhotoURISuccess(imageURI) {
                 console.log("* * * onPhotoURISuccess");
                 // Uncomment to view the image file URI 
-                // console.log(imageURI);
+                 console.log(imageURI);
+                 window.setTimeout(function() {
+                    alert(imageURI);
+                    },1000);
                 var cameraImage = document.getElementById('cameraImage');
                 cameraImage.style.visibility = 'visible';
                 cameraImage.src = imageURI;
@@ -73,29 +76,57 @@
             
             function take_pic() {
                 try{
-                    navigator.camera.getPicture(onPhotoDataSuccess, function(ex) {
-                        alert("Camera Error!");
-                    }, { quality : 50,
-                        destinationType: Camera.DestinationType.DATA_URL,
-                        targetWidth: 100,
-			targetHeight: 100,
-                        correctOrientation: true });
+                    navigator.camera.getPicture(onPhotoDataSuccess,
+                        function(e) {
+                            //alert("Camera Error!");
+                            navigator.notification.alert(
+                                e.message, // message
+                                okayError, // callback
+                                'Error',   // title
+                                'OK'      // buttonName
+                            );
+                        },
+                        { quality : 50,
+                            destinationType: Camera.DestinationType.FILE_URI,
+                            targetWidth: 100,
+                            targetHeight: 100,
+                            correctOrientation: true
+                        });
                 }
                 catch(e) {
                     window.setTimeout(function() {
-                        alert(e.message);
+                        //alert(e.message);
+                        navigator.notification.alert(
+                            e.message, // message
+                            okayError, // callback
+                            'Error',   // title
+                            'OK'      // buttonName
+                        );
                     },1000);
                 }
             }
             
+            function okayError(){
+                    // Do something
+            }
+            
             function album_pic() { 
-                navigator.camera.getPicture(onPhotoURISuccess, function(ex) {
-                        alert("Camera Error!"); }, 
-                        { quality: 50, 
-                    destinationType: Camera.DestinationType.FILE_URI,
-                    // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and 
-                    // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
-                    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+                navigator.camera.getPicture(onPhotoURISuccess,
+                    function(e) {
+                        //alert("Camera Error!");
+                        navigator.notification.alert(
+                            e.message, // message
+                            okayError, // callback
+                            'Error',   // title
+                            'OK'      // buttonName
+                        );
+                    }, 
+                    { quality: 50, 
+                        destinationType: Camera.DestinationType.FILE_URI,
+                        // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and 
+                        // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
+                        sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM
+                    });
             }
         </script>
         
