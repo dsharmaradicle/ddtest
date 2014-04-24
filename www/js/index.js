@@ -63,6 +63,6 @@ var app = {
         window.setTimeout(function() {
             var appElement = document.querySelector('.app');
             appElement.setAttribute('style', 'display:none;');
-        },1000);
+        },2000);
     }
 };

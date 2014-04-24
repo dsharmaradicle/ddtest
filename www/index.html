@@ -59,33 +59,28 @@
                 console.log("* * * onPhotoDataSuccess");
                 var cameraImage = document.getElementById('cameraImage');
                 cameraImage.style.visibility = 'visible';
-                cameraImage.src = "data:image/jpeg;base64," + imageData;
+                //cameraImage.src = "data:image/jpeg;base64," + imageData;
+                cameraImage.src = imageData;
+                setTimeout(function() {
+                    alert(imageData);
+                },1000);
             }
             
             function onPhotoURISuccess(imageURI) {
                 console.log("* * * onPhotoURISuccess");
                 // Uncomment to view the image file URI 
                  console.log(imageURI);
-                 window.setTimeout(function() {
-                    alert(imageURI);
-                    },1000);
                 var cameraImage = document.getElementById('cameraImage');
                 cameraImage.style.visibility = 'visible';
                 cameraImage.src = imageURI;
+                setTimeout(function() {
+                    alert(imageURI);
+                },1000);
             }
             
             function take_pic() {
                 try{
-                    navigator.camera.getPicture(onPhotoDataSuccess,
-                        function(e) {
-                            //alert("Camera Error!");
-                            navigator.notification.alert(
-                                e.message, // message
-                                okayError, // callback
-                                'Error',   // title
-                                'OK'      // buttonName
-                            );
-                        },
+                    navigator.camera.getPicture(onPhotoDataSuccess, onFail,
                         { quality : 50,
                             destinationType: Camera.DestinationType.FILE_URI,
                             targetWidth: 100,
@@ -94,39 +89,30 @@
                         });
                 }
                 catch(e) {
-                    window.setTimeout(function() {
-                        //alert(e.message);
-                        navigator.notification.alert(
-                            e.message, // message
-                            okayError, // callback
-                            'Error',   // title
-                            'OK'      // buttonName
-                        );
-                    },1000);
+                    alert(e.message);
+                    //window.setTimeout(function() {
+                    //    navigator.notification.alert(
+                    //        e.message, // message
+                    //        okayError, // callback
+                    //        'Error',   // title
+                    //        'OK'      // buttonName
+                    //    );
+                    //},1000);
                 }
             }
             
-            function okayError(){
-                    // Do something
-            }
-            
             function album_pic() { 
-                navigator.camera.getPicture(onPhotoURISuccess,
-                    function(e) {
-                        //alert("Camera Error!");
-                        navigator.notification.alert(
-                            e.message, // message
-                            okayError, // callback
-                            'Error',   // title
-                            'OK'      // buttonName
-                        );
-                    }, 
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, 
                     { quality: 50, 
                         destinationType: Camera.DestinationType.FILE_URI,
                         // Android Quirk: Camera.PictureSourceType.PHOTOLIBRARY and 
                         // Camera.PictureSourceType.SAVEDPHOTOALBUM display the same photo album.
                         sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM
                     });
+            }
+            
+            function onFail(message) {
+                alert('Failed because: ' + message);
             }
         </script>
         
