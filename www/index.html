@@ -176,6 +176,10 @@
             function removeSuccess(entry) {
                 console.log("Removed successfully");
                 alert("Removed successfully");
+                var cameraImage = document.getElementById('cameraImage');
+                cameraImage.style.visibility = 'visible';
+                //cameraImage.src = "data:image/jpeg;base64," + imageData;
+                cameraImage.src = "img/no_image.jpg";
             }
             
             function removeFail(error) {
