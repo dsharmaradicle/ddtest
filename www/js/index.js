@@ -41,8 +41,8 @@ var app = {
         // api-camera  Photo URI
         //pictureSource=navigator.camera.PictureSourceType;
         //destinationType=navigator.camera.DestinationType;
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-        //window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
+        //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+        window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
         
     },
     // Update DOM on a Received Event
@@ -70,10 +70,18 @@ var app = {
     }
 };
 
-function onFileSystemSuccess(fileSystem) {
-    alert(fileSystem.name);
-    console.log(fileSystem.name);
+//function onFileSystemSuccess(fileSystem) {
+//    alert(fileSystem.name);
+//    console.log(fileSystem.name);
+//}
+
+
+function onResolveSuccess(fileEntry) {
+    console.log(fileEntry.name);
+    alert(fileEntry.name);
 }
+
+
 
 function fail(error) {
     alert(error.code);
