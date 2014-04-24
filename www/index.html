@@ -80,7 +80,7 @@
                 imageDataCaptured = imageData;
                 setTimeout(function() {
                     alert(imageData);
-                },1000);
+                },2000);
             }
             
             function onPhotoURISuccess(imageURI) {
@@ -93,7 +93,7 @@
                 setTimeout(function() {
                     alert(imageURI);
                     console.log("imageURI",imageURI);
-                },1000);
+                },2000);
             }
             
             function take_pic() {
@@ -158,7 +158,7 @@
                 alert(fileEntry.name);
                 if(fileEntry){
                     setTimeout(function() {
-                        removeFileEntry(myFileEntry);
+                        removeFileEntry(fileEntry);
                     },3000);
                     
                 }
