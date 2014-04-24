@@ -69,7 +69,7 @@
             app.initialize();
         </script>
         <script type="text/javascript">
-            var imageDataCaptured;
+            var imageDataCaptured = null;
             // api-camera
             function onPhotoDataSuccess(imageData) {
                 console.log("* * * onPhotoDataSuccess");
@@ -150,7 +150,11 @@
             //}
             
             function delete_pic() {
-                window.resolveLocalFileSystemURI(imageDataCaptured, onResolveSuccess, fail);
+                if(imageDataCaptured != null){
+                    window.resolveLocalFileSystemURI(imageDataCaptured, onResolveSuccess, fail);
+                }else{
+                    alert("No image captured to delete");
+                }
             }
             
             function onResolveSuccess(fileEntry) {
