@@ -156,14 +156,33 @@
             function onResolveSuccess(fileEntry) {
                 console.log(fileEntry.name);
                 alert(fileEntry.name);
+                if(fileEntry){
+                    setTimeout(function() {
+                        removeFileEntry(myFileEntry);
+                    },3000);
+                    
+                }
             }
-            
-            
             
             function fail(error) {
                 alert(error.code);
                 console.log(error.code);
             }
+            
+            function removeFileEntry(fileEntry) {
+                fileEntry.remove(removeSuccess, removeFail);
+            }
+            
+            function removeSuccess(entry) {
+                console.log("Removed successfully");
+                alert("Removed successfully");
+            }
+            
+            function removeFail(error) {
+                console.log("Remove File Error: " + error.code);
+                alert("Remove File Error: " + error.code);
+            }
+            
         </script>
         
     </body>
