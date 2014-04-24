@@ -41,6 +41,9 @@ var app = {
         // api-camera  Photo URI
         //pictureSource=navigator.camera.PictureSourceType;
         //destinationType=navigator.camera.DestinationType;
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+        //window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -66,3 +69,9 @@ var app = {
         },2000);
     }
 };
+
+function onFileSystemSuccess(fileSystem) {
+    alert(fileSystem.name);
+    console.log(fileSystem.name);
+}
+
