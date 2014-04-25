@@ -46,6 +46,7 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-minSdkVersion"      value="8" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+    <preference name="loadUrlTimeoutValue" value="50000"/>                  <!-- amount of time to wait before throwing a timeout error. -->
 
     <!-- Plugins can also be added here. -->
     <gap:plugin name="org.apache.cordova.camera" version="0.2.4" />
