@@ -66,6 +66,7 @@
         <!--<script type="text/javascript" src="js/camera.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
+            
             app.initialize();
         </script>
         <script type="text/javascript">
@@ -134,9 +135,9 @@
             
             function onFail(message) {
                 //alert('Failed because: ' + message);
-                //alert(message);
-                alert('code: '    + error.code    + '\n' +
-                      'message: ' + error.message + '\n');
+                alert(message);
+                //alert('code: '    + error.code    + '\n' +
+                //      'message: ' + error.message + '\n');
                 //setTimeout(function() {
                 //        navigator.notification.alert(
                 //            message, // message
@@ -153,7 +154,7 @@
             
             function delete_pic() {
                 if(imageDataCaptured != null){
-                    window.resolveLocalFileSystemURI(imageDataCaptured, onResolveSuccess, fail);
+                    window.resolveLocalFileSystemURI(imageDataCaptured, onResolveSuccess, fileFail);
                 }else{
                     alert("No image captured to delete and delete will work only for Capture Photo");
                 }
@@ -170,12 +171,10 @@
                 }
             }
             
-            function fail(error) {
-                //alert(error.code);
-                alert('code: '    + error.code    + '\n' +
-                      'message: ' + error.message + '\n');
-
+            function fileFail(error) {
                 console.log(error.code);
+                //alert(error.code);
+                alert(fileErrorMsg(error.code));
             }
             
             function removeFileEntry(fileEntry) {
@@ -194,8 +193,38 @@
             function removeFail(error) {
                 console.log("Remove File Error: " + error.code);
                 //alert("Remove File Error: " + error.code);
-                alert('Remove File Error code: '    + error.code    + '\n' +
-                      'Remove File Error message: ' + error.message + '\n');
+                alert(fileErrorMsg(error.code));
+            }
+            
+            function fileErrorMsg(errorCode){
+                switch (errorCode)
+                {
+                case FileError.NOT_FOUND_ERR:
+                  x="FileError.NOT_FOUND_ERR";
+                  break;
+                case FileError.SECURITY_ERR:
+                  x="FileError.SECURITY_ERR";
+                  break;
+                case FileError.ABORT_ERR:
+                  x="FileError.ABORT_ERR";
+                  break;
+                case FileError.NOT_READABLE_ERR:
+                  x="FileError.NOT_READABLE_ERR";
+                  break;
+                case FileError.ENCODING_ERR:
+                  x="FileError.ENCODING_ERR";
+                  break;
+                case FileError.NO_MODIFICATION_ALLOWED_ERR:
+                  x="FileError.NO_MODIFICATION_ALLOWED_ERR";
+                  break;
+                case FileError.INVALID_STATE_ERR:
+                  x="FileError.INVALID_STATE_ERR";
+                  break;
+                default:
+                    x="Not defined";
+                }
+                console.log(x);
+                return x;
             }
         </script>
         
