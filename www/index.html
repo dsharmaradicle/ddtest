@@ -134,7 +134,9 @@
             
             function onFail(message) {
                 //alert('Failed because: ' + message);
-                alert(message);
+                //alert(message);
+                alert('code: '    + error.code    + '\n' +
+                      'message: ' + error.message + '\n');
                 //setTimeout(function() {
                 //        navigator.notification.alert(
                 //            message, // message
@@ -169,7 +171,10 @@
             }
             
             function fail(error) {
-                alert(error.code);
+                //alert(error.code);
+                alert('code: '    + error.code    + '\n' +
+                      'message: ' + error.message + '\n');
+
                 console.log(error.code);
             }
             
@@ -188,9 +193,10 @@
             
             function removeFail(error) {
                 console.log("Remove File Error: " + error.code);
-                alert("Remove File Error: " + error.code);
+                //alert("Remove File Error: " + error.code);
+                alert('Remove File Error code: '    + error.code    + '\n' +
+                      'Remove File Error message: ' + error.message + '\n');
             }
-            
         </script>
         
     </body>
