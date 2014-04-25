@@ -182,12 +182,15 @@
             }
             
             function removeSuccess(entry) {
-                console.log("Removed successfully " + entry.name);
-                alert("Removed successfully " + entry.name);
+                console.log("Removed successfully " + entry);
+                alert("Removed successfully " + entry);
                 var cameraImage = document.getElementById('cameraImage');
                 cameraImage.style.visibility = 'visible';
                 //cameraImage.src = "data:image/jpeg;base64," + imageData;
                 cameraImage.src = "img/no_image.jpg";
+                
+                // to set null on previously captured image URI
+                imageDataCaptured = null
             }
             
             function removeFail(error) {
