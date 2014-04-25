@@ -161,8 +161,8 @@
             }
             
             function onResolveSuccess(fileEntry) {
-                console.log(fileEntry.name);
-                alert(fileEntry.name);
+                console.log("File to delete " + fileEntry.name);
+                alert("File to delete " + fileEntry.name);
                 if(fileEntry){
                     setTimeout(function() {
                         removeFileEntry(fileEntry);
