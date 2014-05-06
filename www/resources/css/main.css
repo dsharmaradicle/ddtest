@@ -1,0 +1,60 @@
+@media all and (min-width: 950px) {
+	#nav, .questionnareUpload_left {
+		width: 49%;
+		float: left;
+		margin-right: 18px;
+		margin-top:10px;
+	}
+	#grid {
+	    margin-top:10px;
+		width: 49%;
+		float: left;
+	}
+	.bodyPartImgNav{
+		width: 49% !important;
+		float: left;
+		margin-right: 20px;
+		margin-top:10px;
+	}
+}
+
+@media all and (max-width: 945px) {
+	#nav {
+	    margin-top:10px;
+		width: 100%;
+	}
+	#grid {
+	    margin-top:10px; 
+		width: 100%;
+	}
+	.bodyPartImgNav{
+		margin-top:10px;
+		width: 100% !important;
+	}
+	
+	.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b {
+		width: 100%;
+	}
+	.ui-mobile label, .ui-controlgroup-label, .ui-input-text, .ui-input-search, .one-field label, .one-field .ui-input-text {width: 100%; line-height: 18px;  margin: 0 0 10px;}
+.ui-grid-a {overflow: visible;}
+.ui-grid-a .bodypart-a, .ui-extarea-search { width:100%!important;}
+}
+@media only screen and (min-width: 280px) and (max-width: 480px) {
+.ui-grid-a>.ui-block-a img { width:100%;}
+.ui-header-fixed .ui-btn-right {margin-top: -3px;}
+.ui-header-fixed .ui-btn-right label { margin:0;}
+.add_more_btn { margin: 7px 16px;float: left;}
+.ui-btn:link { margin:0;}
+}
+.space20{
+ margin-top:5px;clear: both;
+}
+
+.ui-bar {
+	height: 120px;
+}
+.custom_class {
+  height: 114 !important; /* !important is used to force override. */
+}
+textarea.ui-input-text { height: inherit !important}
+.questionnaire_btn{ clear:both}
