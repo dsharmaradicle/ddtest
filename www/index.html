@@ -23,19 +23,81 @@
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta http-equiv='cache-control' content='no-cache'>
+	<META Http-Equiv='Expires' Content='0'>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>DDTest</title>
     </head>
-    <body>
+    <body onLoad="checkAppDetails();">
+        
+        <div data-role="page" class="clinic-page">
+		<div data-role="header"  data-position="fixed" >
+			<div class="ui-grid-a">
+				<div  class="ui-block-a" >
+					<img src="resources/images/DD.jpg" class="ui-li-thumb" />
+				</div>
+				<div class="ui-block-name" >
+					Profile
+				</div>
+				<div  class="ui-block-b" >
+					<div class="ui-btn-right">
+						<label for="page"></label>
+						<div class="menu"><span>Profile</span>
+                            <ul class="">
+                                <li><a onclick="menuClick('profile');">Profile</a></li>
+                                <li><a onclick="menuClick('patient');">Patient</a></li>
+                                <li><a onclick="menuClick('help');">Help</a></li>
+                            </ul>
+                        </div>
+					</div>  
+				</div> 
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form method="post" action="demoform.asp">
+				<div class="ui-field-contain">
+					<div class="one-field">
+						<label for="clinicname">Clinic:</label>
+						<input type="text" name="clinicname" id="clinicname"> 
+						<span id="clinicname_validation" class="error">Please enter Clinic Name</span>
+					</div>
+					<div class="one-field">
+						<label for="pcpname">PCP Name:</label>
+						<input type="text" name="pcpname" id="pcpname">
+						<span id="pcpname_validation" class="error">Please enter PCP Name</span>
+					</div>
+					<div class="one-field">
+						<label for="email">E-mail:</label>
+						<input type="email" name="email" id="email" placeholder="Your email..">
+						<span id="email-validation-error" class="error">Valid email address (demo@test.com)</span>
+					</div>
+					<div class="one-field">
+						<label for="phone">Phone:</label>
+						<input type="text" name="phone" id="phone">
+						<span id="phone-validation-error" class="error">Not a valid Phone Number</span>          
+					</div>
+					<div class="one-field">
+						<label for="fax">Fax:</label>
+						<input type="text" name="fax" id="fax">
+						<span id="fax-validation-error" class="error">Not a valid Phone Number</span>
+					</div>
+				</div>
+				<button type="button" name="Continue" value="Continue" onclick="formClinicValidation();" >Continue</button>
+			</form>
+		</div>
+	</div>
+        
+        
         <div class="app">
             <h1>Direct Dermatology</h1>
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event listening">Loading...</p>
+                <p class="event received">Loading...</p>
             </div>
         </div>
         
-        <div id="camera" class="camera-option">
+        <!--<div id="camera" class="camera-option">
             <div class="container">
                 <div class="left">
                     <div style="text-align:center;margin:20px;">
@@ -54,12 +116,14 @@
                     <button class="camera-control" onclick="delete_pic();">Delete</button>
                 </div>
             </div>
-         
-            
-        </div>
+        </div>-->
         
       
         
+        <link rel="stylesheet" href="resources/css/jquery.mobile-1.4.2.min.css">
+        <script src="resources/jquery/jquery-1.10.2.min.js"></script>
+        <script src="resources/jquery/jquery.mobile-1.4.2.min.js"></script>
+        <script src="js/derm.js"></script>
         
         <script type="text/javascript" src="phonegap.js"></script>
         <script src="http://debug.build.phonegap.com/target/target-script-min.js#8568b704-cab0-11e3-9e9b-22000aa44e44"></script>

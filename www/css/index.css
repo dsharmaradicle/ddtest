@@ -168,3 +168,9 @@ div.center {
 div.right {
     /*background-color: yellow;    */
 }
+
+
+
+.clinic-page {
+    display:none;
+}

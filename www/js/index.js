@@ -56,17 +56,17 @@ var app = {
 
         console.log('Received Event: ' + id);
         
-        
-        var cameraElement = document.querySelector('.camera-option');
-        
+        // to hide loading splash screen
         //window.setTimeout(function() {
-                cameraElement.setAttribute('style', 'display:block;');
-        //},1000);
-        
-        window.setTimeout(function() {
             var appElement = document.querySelector('.app');
             appElement.setAttribute('style', 'display:none;');
-        },2000);
+        //},2000);
+        
+        // to show first main clinic page
+        var clinicElement = document.querySelector('.clinic-page');
+        //window.setTimeout(function() {
+                clinicElement.setAttribute('style', 'display:block;');
+        //},5000);    
     }
 };
 
